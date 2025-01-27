@@ -23,7 +23,7 @@ def buscabinaria(chave, n):
         return - 1;
 
 def incluir(chave,n,m):
-    ind = 0;
+    ind = 0
     if n < m:
         ind = buscar(chave,n)
         if (ind==n):
@@ -32,7 +32,7 @@ def incluir(chave,n,m):
         else:
             if (lista[ind] !=chave):
                 i = n - 1 
-                while i > ind:
+                while i >= ind:
                     lista[i+1] = lista[i]
                     i = i- 1
                 lista[ind] = chave
@@ -66,6 +66,7 @@ while (cont !=0):
     cont = int(input("Digite (1) Inclusão,(2) exclusão, (3) mostrar lista, (4) busca binaria, (0) Sair"))
     if (cont == 1):
         chave = int(input("Digite valor para incluir"))
+        n= incluir(chave,n,m)
     else:
         if (cont==2):
             chave = int(input("Digite valor para excluir"))
