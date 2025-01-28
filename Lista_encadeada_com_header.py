@@ -2,34 +2,34 @@ class Elemento:
     def __init__(self):
         self.valor = 0
         self.prox = None
-    
-def busca(chave, primeiro):
+
+def busca(chave,primeiro):
     pont = primeiro.prox
     ant = primeiro
-    while((pont != None) and (pont.valor < chave)):
+    while((pont != None) and pont.valor < chave):
         ant = pont
         pont = pont.prox
     return ant,pont
 
 def incluir(chave, primeiro):
-    ant,pont = busca(chave,primeiro)
-    if ((pont == None) or (pont.valor != chave)):
+    ant, pont = busca(chave, primeiro)
+    if ((pont ==None) or (pont.valor != chave)):
         novo = Elemento()
         novo.valor = chave
         novo.prox = ant.prox
         ant.prox = novo
     else:
-        print("Elemento existe na lista")
+        print('Elemento ja existe na lista')
 
-def excluir(chave,primeiro):
-    ant,pont = busca(chave,primeiro)
+def excluir(chave, primeiro):
+    ant, pont = busca(chave, primeiro)
     if ((pont != None) and (pont.valor == chave)):
         ptaux = pont
         ant.prox = pont.prox
         del ptaux
     else:
-        print("Chave inexistencia")
-
+        print("Chave inexistente")
+        
 def mostrar(primeiro):
     pont = primeiro.prox
     while (pont != None):
@@ -43,12 +43,13 @@ primeiro.prox = None
 
 cont = 1
 while (cont !=0):
-    cont = int(input("Digite (1) Inclusão, (2) Exclusão, (3) Mostrar (0)Sair"))
-    if (cont==1):
+    cont = int(input("Digite (1) inclusão, (2) exclusão, (3) mostrar (0) sair"))
+    if (cont == 1):
         chave = int(input("Digite valor para incluir"))
-        incluir(chave, primeiro)
+        incluir(chave,primeiro)
     elif (cont == 2):
         chave = int(input("Digite valor para excluir"))
-        n = excluir(chave, primeiro)
+        n = excluir(chave,primeiro)
     elif (cont == 3):
         mostrar(primeiro)
+        
