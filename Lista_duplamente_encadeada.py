@@ -1,5 +1,5 @@
 class Elemento:
-    def __init__(self):
+    def _init_(self):
         self.valor = 0
         self.prox = None
         self.ant = None
@@ -10,7 +10,7 @@ def busca(chave,primeiro):
         pont = primeiro.prox
         while (pont.valor < chave):
             pont = pont.prox
-            return pont
+        return pont
     else:
         return primeiro
 
@@ -27,6 +27,7 @@ def incluir(chave,primeiro):
     else:
         print("Elemento existe na lista")
 
+
 def excluir(chave,primeiro):
     pont = busca(chave,primeiro)
     if((pont != primeiro) and (pont.valor == chave)):
@@ -38,6 +39,7 @@ def excluir(chave,primeiro):
     else:
         print("Chave inexistente")
 
+
 primeiro = Elemento()
 primeiro.valor = 0
 primeiro.prox = primeiro
@@ -47,11 +49,11 @@ cont = 1
 while (cont != 0):
     cont = int(input("Digite (1) Inclusão, (2) Exclusão, (3) mostrar lista, (0)sair "))
     if (cont == 1):
-        chave = int(input("Digite valor para incluir"))
+        chave = int(input("Digite valor para incluir "))
         incluir(chave, primeiro)
     else:
         if (cont == 2):
-            chave = int(input("Digite valor para excluir"))
+            chave = int(input("Digite valor para excluir "))
             excluir(chave,primeiro)
         else:
             if (cont == 3):
