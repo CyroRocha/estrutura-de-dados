@@ -12,6 +12,7 @@ def empilhar(chave, topo):
 
 def desempilhar(topo):
     if (topo != None):
+        print(topo.valor)
         ptaux = topo
         topo = topo.prox
         del ptaux
