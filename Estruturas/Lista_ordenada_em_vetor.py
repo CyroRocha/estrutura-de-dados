@@ -18,7 +18,7 @@ def buscabinaria(chave, n):
             else:
                 inf = meio + 1;
     if(lista[meio]== chave):
-        return
+        return meio
     else:
         return - 1;
 
